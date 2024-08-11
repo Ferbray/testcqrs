@@ -9,7 +9,7 @@ public class UserRepository(DatabaseContext context) : IUserRepository
 
     public IEnumerable<UserEntity> GetAll() => [.. _userSet];
 
-    public async Task<bool> SaveChanges(UserEntity user)
+    public async Task<UserEntity> SaveChanges(UserEntity user)
     {
         if (await _userSet.AnyAsync(u => u.Id == user.Id))
         {
@@ -20,6 +20,6 @@ public class UserRepository(DatabaseContext context) : IUserRepository
             await _userSet.AddAsync(user);
         }
 
-        return true;
+        return user;
     }
 }

@@ -1,4 +1,5 @@
 namespace testcqrs.Domain.Requests;
+
 public class UserRequest
 {
     public Guid Id { get; set; }
