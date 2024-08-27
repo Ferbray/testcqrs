@@ -1,9 +1,8 @@
 using AutoMapper;
 using MediatR;
-using testcqrs.Domain.Contracts.Data;
-using testcqrs.Domain.Contracts.Data.Repositories;
+using testcqrs.ModuleName.Contracts.Data;
 
-namespace testcqrs.Application.Commands;
+namespace testcqrs.ModuleName.Commands;
 
 public abstract class BaseCreateCommand<TRequest, TResponse>(TRequest request)
     : IRequest<TResponse>
@@ -23,7 +22,7 @@ public abstract class BaseCreateCommandHandler<TR, TC, TIM, TOM, TE>(IUnitOfWork
     {
         var repository = _unitOfWork.Repository<TR>();
         var result = await repository.SaveChanges(_mapper.Map<TE>(command.Request));
-        await _unitOfWork.Commit();
+        await _unitOfWork.CommitAsync();
 
         return _mapper.Map<TOM>(result);
     }

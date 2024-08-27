@@ -1,10 +1,10 @@
 using AutoMapper;
-using testcqrs.Domain.Responses;
-using testcqrs.Domain.Contracts.Data;
-using testcqrs.Domain.Contracts.Data.Repositories;
-using testcqrs.Domain.Entities;
+using testcqrs.ModuleName.Responses;
+using testcqrs.ModuleName.Contracts.Data;
+using testcqrs.ModuleName.Entities;
 
-namespace testcqrs.Application.Queries;
+namespace testcqrs.ModuleName.Queries;
+
 public class GetAllUserQuery : BaseGetAllQuery<UserResponse>
 {
 }

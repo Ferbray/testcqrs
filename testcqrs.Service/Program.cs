@@ -1,7 +1,8 @@
 
-using testcqrs.WebApi;
+using testcqrs.ModuleName.Configurations;
 
 namespace testcqrs.Service;
+
 public class Program
 {
     public static void Main(string[] args)

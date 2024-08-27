@@ -1,6 +1,7 @@
-using testcqrs.Domain.Entities;
+using testcqrs.ModuleName.Entities;
 
-namespace testcqrs.Domain.Contracts.Data.Repositories;
+namespace testcqrs.ModuleName.Contracts.Data;
+
 public interface IUserRepository : IBaseRepository<UserEntity>
 {
 }

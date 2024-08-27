@@ -1,12 +1,11 @@
 using AutoMapper;
-using MediatR;
-using testcqrs.Domain.Contracts.Data;
-using testcqrs.Domain.Contracts.Data.Repositories;
-using testcqrs.Domain.Entities;
-using testcqrs.Domain.Requests;
-using testcqrs.Domain.Responses;
+using testcqrs.ModuleName.Contracts.Data;
+using testcqrs.ModuleName.Entities;
+using testcqrs.ModuleName.Requests;
+using testcqrs.ModuleName.Responses;
 
-namespace testcqrs.Application.Commands;
+namespace testcqrs.ModuleName.Commands;
+
 public class CreateUserCommand(UserRequest request)
     : BaseCreateCommand<UserRequest, UserResponse>(request)
 {

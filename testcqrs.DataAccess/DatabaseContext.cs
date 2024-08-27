@@ -1,19 +1,17 @@
 using Microsoft.EntityFrameworkCore;
-using testcqrs.Domain.Entities;
+using testcqrs.ModuleName.Entities;
 
-namespace testcqrs.DataAccess;
+namespace testcqrs.ModuleName.Data;
+
 public class DatabaseContext : DbContext
 {
 	public virtual DbSet<UserEntity> Users { get; set; }
 
 	public DatabaseContext()
 	{
-
 	}
 
-	public DatabaseContext(DbContextOptions options)
-		: base(options)
+	public DatabaseContext(DbContextOptions options) : base(options)
 	{
-
 	}
 }

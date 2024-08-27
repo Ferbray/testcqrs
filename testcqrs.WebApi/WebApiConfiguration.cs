@@ -2,13 +2,12 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using testcqrs.DataAccess;
-using testcqrs.DataAccess.Repositories;
-using testcqrs.Domain.Contracts.Data;
-using testcqrs.Domain.Contracts.Data.Repositories;
-using testcqrs.Domain.Mapping;
+using testcqrs.ModuleName.Data;
+using testcqrs.ModuleName.Contracts.Data;
+using testcqrs.ModuleName.Contracts.Mapping;
 
-namespace testcqrs.WebApi;
+namespace testcqrs.ModuleName.Configurations;
+
 public class WebApiConfiguration
 {
     public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
@@ -30,8 +29,8 @@ public class WebApiConfiguration
         services.AddMediatR(cfg =>
             cfg.RegisterServicesFromAssemblies(Assembly.Load(new AssemblyName("testcqrs.Application"))));
 
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>()
+                .AddScoped<IUserRepository, UserRepository>();
 
         services.AddAutoMapper(typeof(UserMapping));
     }

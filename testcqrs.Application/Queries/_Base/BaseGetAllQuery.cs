@@ -1,9 +1,8 @@
 using AutoMapper;
 using MediatR;
-using testcqrs.Domain.Contracts.Data;
-using testcqrs.Domain.Contracts.Data.Repositories;
+using testcqrs.ModuleName.Contracts.Data;
 
-namespace testcqrs.Application.Queries;
+namespace testcqrs.ModuleName.Queries;
 
 public abstract class BaseGetAllQuery<TResponse>
     : IRequest<IEnumerable<TResponse>>

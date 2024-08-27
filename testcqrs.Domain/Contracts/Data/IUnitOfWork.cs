@@ -1,8 +1,8 @@
-using testcqrs.Domain.Contracts.Data.Repositories;
+namespace testcqrs.ModuleName.Contracts.Data;
 
-namespace testcqrs.Domain.Contracts.Data;
 public interface IUnitOfWork
 {
     public T Repository<T>() where T : notnull;
-    public Task Commit();
+    public void Commit();
+    public Task CommitAsync();
 }

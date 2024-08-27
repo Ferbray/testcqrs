@@ -1,4 +1,5 @@
-namespace testcqrs.Domain.Entities;
+namespace testcqrs.ModuleName.Entities;
+
 public class UserEntity : BaseEntity
 {
 	public string Login { get; set; } = null!;

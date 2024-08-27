@@ -1,9 +1,10 @@
 using AutoMapper;
-using testcqrs.Domain.Entities;
-using testcqrs.Domain.Requests;
-using testcqrs.Domain.Responses;
+using testcqrs.ModuleName.Entities;
+using testcqrs.ModuleName.Requests;
+using testcqrs.ModuleName.Responses;
 
-namespace testcqrs.Domain.Mapping;
+namespace testcqrs.ModuleName.Contracts.Mapping;
+
 public class UserMapping : Profile
 {
     public UserMapping()

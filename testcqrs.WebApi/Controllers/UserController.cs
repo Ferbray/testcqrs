@@ -1,12 +1,12 @@
 using System.Net;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using testcqrs.Application.Commands;
-using testcqrs.Application.Queries;
-using testcqrs.Domain.Requests;
-using testcqrs.Domain.Responses;
+using testcqrs.ModuleName.Commands;
+using testcqrs.ModuleName.Queries;
+using testcqrs.ModuleName.Requests;
+using testcqrs.ModuleName.Responses;
 
-namespace testcqrs.WebApi.Controllers;
+namespace testcqrs.ModuleName.Controllers;
 
 [Route("api/user")]
 public class UserController(IMediator mediator) : Controller

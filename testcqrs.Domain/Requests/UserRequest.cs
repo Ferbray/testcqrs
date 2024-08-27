@@ -1,4 +1,4 @@
-namespace testcqrs.Domain.Requests;
+namespace testcqrs.ModuleName.Requests;
 
 public class UserRequest
 {
