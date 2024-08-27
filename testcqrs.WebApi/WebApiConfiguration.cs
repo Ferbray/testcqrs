@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using testcqrs.ModuleName.Data;
 using testcqrs.ModuleName.Contracts.Data;
 using testcqrs.ModuleName.Contracts.Mapping;
+using testcqrs.ModuleName.Entities;
 
 namespace testcqrs.ModuleName.Configurations;
 
@@ -30,7 +31,8 @@ public class WebApiConfiguration
             cfg.RegisterServicesFromAssemblies(Assembly.Load(new AssemblyName("testcqrs.Application"))));
 
         services.AddScoped<IUnitOfWork, UnitOfWork>()
-                .AddScoped<IUserRepository, UserRepository>();
+                .AddScoped<IUserRepository, UserRepository>()
+                .AddScoped<ICommonRepository<UserEntity>, CommonRepository<UserEntity>>();
 
         services.AddAutoMapper(typeof(UserMapping));
     }

@@ -13,7 +13,7 @@ public class CreateUserCommand(UserRequest request)
 
 public class CreateUserCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
     : BaseCreateCommandHandler<
-        IUserRepository,
+        ICommonRepository<UserEntity>,
         CreateUserCommand,
         UserRequest,
         UserResponse,

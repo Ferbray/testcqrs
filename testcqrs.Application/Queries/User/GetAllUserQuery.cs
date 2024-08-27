@@ -10,6 +10,10 @@ public class GetAllUserQuery : BaseGetAllQuery<UserResponse>
 }
 
 public class GetAllUserQueryHandler(IMapper mapper, IUnitOfWork unitOfWork)
-	: BaseGetAllQueryHandler<IUserRepository, GetAllUserQuery, UserResponse, UserEntity>(mapper, unitOfWork)
+	: BaseGetAllQueryHandler<
+		ICommonRepository<UserEntity>,
+		GetAllUserQuery,
+		UserResponse,
+		UserEntity>(mapper, unitOfWork)
 {
 }
